@@ -10,7 +10,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    header_image = models.ImageField(null=True, blank=True, upload_to='images/')
+    header_image = models.ImageField(default="images/logo_gray.png", upload_to='images/')
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
