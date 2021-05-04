@@ -64,14 +64,14 @@
         </div>
       </div>
 
-      <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+      <header class="site-navbar mt-4 js-sticky-header site-navbar-target" role="banner">
 
         <div class="container">
           <div class="row align-items-center position-relative">
 
 
             <div class="site-logo mt-n3">
-              <a href="/" class="text-black"><span class="text-primary"><img src="{{logo_gray}}" 
+              <a href="/" class="text-black"><span class="text-primary"><img src="/static/images/logo_gray.png" 
               	width="80%" height="80%" alt=""></a>
             </div>
 
@@ -84,7 +84,7 @@
 
 
                   <li class="has-children">
-                    <a href="#about-section" class="nav-link">О нас   <i class="fa fa-angle-down"></i></a>
+                    <a href="#about-section" class="nav-link">О нас<i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown">
                       <li><a href="#team-section" class="nav-link">Команда</a></li>
                       <li><a href="#pricing-section" class="nav-link">Мы на карте</a></li>
@@ -142,12 +142,10 @@
 					<div class="card-body">
 						<h5 class="card-title">{{post.title}}</h5>
 						<p class="card-text">
-							Some quick example text to build on the card title and make up the bulk of the
-							card's content.
+							{{post.description}}
 
 						</p>
 						<p>Published: {{post.published_date}}</p>		
-
 						<a href="#!" class="btn btn-primary">Read</a>
 					</div>
 				</div>
@@ -188,7 +186,7 @@
     <hr class="m-0" />
 
     <div class="text-center py-4 align-items-center">
-      <p>Follow MDB on social media</p>
+      <p>Мы в социальных сетях</p>
       <a href="https://www.youtube.com/channel/UCTQUw_vdYrIMm7lDUwSMF5w" class="btn btn-primary m-1" role="button"
         rel="nofollow" target="_blank">
         <i class="fa fa-youtube"></i>
