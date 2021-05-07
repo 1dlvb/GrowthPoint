@@ -1,1 +1,1 @@
-web:gunicorn GrowthPoint.wsgi
+web:gunicorn
