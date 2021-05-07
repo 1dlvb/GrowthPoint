@@ -1,1 +1,1 @@
-web: gunicorn growth-point-igra.wsgi
+web: gunicorn GrowthPoint.wsgi
