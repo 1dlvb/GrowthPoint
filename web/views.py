@@ -17,8 +17,8 @@ def index(request):
     return render(request, 'web/index.html', context)
 
 
-def detail_view(request, id):
-    post = get_object_or_404(Post, id=id)
+def detail_view(request, pk):
+    post = get_object_or_404(Post, pk=pk)
     photos = PostImages.objects.filter(post=post)
     context = {
         'post': post,

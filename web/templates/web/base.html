@@ -29,6 +29,7 @@
         }
       }
     </style>
+<div class="container">
     
      <div class="site-mobile-menu site-navbar-target">
         <div class="site-mobile-menu-header">
@@ -108,109 +109,13 @@
         </div>
 
       </header>
-  
-
-    <!-- Jumbotron -->
-    <div id="intro" class="p-5 text-center bg-light">
-      <h1 class="mb-3 h2">Точка роста Игринской СОШ№4</h1>
-      <p class="mb-3">Федеральная сеть центров образования цифрового, естественнонаучного, технического и гуманитарного профилей, организованная в рамках проекта "Современная школа"</p>
-    </div>
-    <!-- Jumbotron -->
-  </header>
-  <!--Main Navigation-->
-
-  <!--Main layout-->
-  <main class="my-5">
-    <div class="container">
-      <!--Section: Content-->
-      <section class="text-center">
-        <h4 class="mb-5"><strong>Последние новости</strong></h4>
+{% block content %}
+{% endblock %}
 
 
+    
 
-
-		<div class="row">
-			{% for post in posts %}
-			<div class="col-lg-4 col-md-6 mb-4">
-				<div class="posts p-3 mb-5">
-					{% if post.header_image %}
-					<div class="image mb-3 bg-image hover-overlay">
-						<img src="/media/{{post.header_image}}" class="img-fluid" alt="">				
-						
-					</div>
-					{% endif %}
-					<div class="card-body">
-						<h5 class="card-title">{{post.title}}</h5>
-						<p class="card-text">
-							{{post.description}}
-
-						</p>
-						<p>Published: {{post.published_date}}</p>		
-						<a href="#!" class="btn btn-primary">Read</a>
-					</div>
-				</div>
-			</div>
-
-			{% endfor %}
-		</div>
-
+ 
 </div>
-
-
-        
-      <!--Section: Content-->
-
-      <!-- Pagination -->
-     <!--  <nav class="my-4" aria-label="...">
-        <ul class="pagination pagination-circle justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav> -->
-    </div>
-  </main>
-  <!--Main layout-->
-
-  <!--Footer-->
-  <footer class="bg-light text-lg-start">
-   
-    <hr class="m-0" />
-
-    <div class="text-center py-4 align-items-center">
-      <p>Мы в социальных сетях</p>
-      <a href="https://www.youtube.com/channel/UCTQUw_vdYrIMm7lDUwSMF5w" class="btn btn-primary m-1" role="button"
-        rel="nofollow" target="_blank">
-        <i class="fa fa-youtube"></i>
-      </a>
-      <a href="https://vk.com/public186332645" class="btn btn-primary m-1" role="button" rel="nofollow"
-        target="_blank">
-        <i class="fa fa-vk"></i>
-      </a>
-      <a href="https://github.com/1dlvb" class="btn btn-primary m-1" role="button" rel="nofollow"
-        target="_blank">
-        <i class="fa fa-github"></i>
-      </a>
-    </div>
-
- 	
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2021 Copyright:
-      <a class="text-dark" target="_blank" href="https://github.com/1dlvb">GitHub</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!--Footer-->
-
 </body>
 </html>

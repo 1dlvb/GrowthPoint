@@ -3,6 +3,10 @@ from django.db import models
 from django.utils import timezone
 from django.forms import forms
 from django.core.files.images import get_image_dimensions
+
+import os
+from PIL import Image
+
 # Create your models here.
 
 
@@ -38,20 +42,32 @@ class LimitedImageField(models.ImageField):
         return data
 
 
+# resize image function
+def resize_image(input_image_path, size):
+    original_image = Image.open(input_image_path)
+    resized_image = original_image.resize(size)
+    resized_image.save(input_image_path, quality=95)
+    return resized_image
+
+
+# Post model
 class Post(models.Model):
 
-    HEADER_IMAGE_RESOLUTION = (400, 300)
+    HEADER_IMAGE_RESOLUTION = (1000, 1000)
 
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
-    description = models.CharField(max_length=255, default='Федеральная сеть центров образования цифрового,'
+    title = models.CharField(max_length=35, help_text='Title must not exceed 35 characters.')
+    description = models.CharField(max_length=160, default='Федеральная сеть центров образования цифрового,'
                                                            ' естественнонаучного, технического и гуманитарного '
                                                            'профилей, организованная в рамках проекта '
-                                                           '"Современная школа"')
+                                                           '"Современная школа".',
+                                   help_text='Description must not exceed 160 characters.')
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    header_image = LimitedImageField('Header Image', default="images/empty_image.jpg", upload_to='images/',
-                                     min_dim=(400, 300), max_dim=(400, 300),
+    header_image = LimitedImageField('Header Image', default="images/1000x1000.jpg",
+                                     upload_to='images/',
+                                     min_dim=HEADER_IMAGE_RESOLUTION,
+                                     max_dim=HEADER_IMAGE_RESOLUTION,
                                      help_text='Header image should be {}x{} in size.'.format(*HEADER_IMAGE_RESOLUTION))
     published_date = models.DateTimeField(blank=True, null=True)
     image = LimitedImageField(blank=True)

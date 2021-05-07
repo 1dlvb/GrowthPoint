@@ -1,11 +1,16 @@
-<!--{% extends 'web/base.html' %}-->
+{% extends 'web/base.html' %}
 
 
-<!--{% block content %}-->
-<!--	{% for post in posts %}-->
-<!--		{{post}}-->
-<!--	{% endfor %}-->
-<!--    {% for p in photos %}-->
-<!--    	<img src="{{p.image.url}}" alt="">-->
-<!--    {% endfor %}-->
-<!--{% endblock %}-->
+{% block content %}
+<div class="container">
+    <div id="intro" class="p-5 text-center bg-light">
+		<img src="/media/{{post.header_image}}" alt="Preview" class="img-fluid mb-5" >
+		<h1 class="mb-5">{{post.title}}</h1>
+		<p  class="mb-3">{{post.text}}</p>
+			{% for image in post.postimages_set.all %} 
+				<img src="{{ MEDIA_URL}} {{ image.image.url }}"  alt="Post image" class="img-fluid mb-5" />
+			{% endfor %}
+	<div>
+<div>
+
+{% endblock %}
