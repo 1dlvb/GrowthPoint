@@ -30,12 +30,54 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
 
+.description{
+  font-size: 15px;
+}
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease; }
   a, a:hover {
     text-decoration: none !important; }
+
+.burger, .burger:hover{
+  display: none;
+  font-size: 35px;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: -15px;
+
+  text-align: right;
+  color:#000;
+
+}
+#intro p{
+  font-size: 18px;
+}
+
+#intro {
+/* Margin to fix overlapping fixed navbar */
+  margin-top: 58px;
+}
+@media (max-width: 991px) {
+  #intro {
+    /* Margin to fix overlapping fixed navbar */
+    margin-top: 45px;
+  }
+  .burger{
+    display: block;
+  }
+
+  .description{
+    font-size: 20px;
+  }
+  #intro p{
+    font-size: 28px;
+  }
+}
+
+
+
 
 .hero {
   height: 100vh;

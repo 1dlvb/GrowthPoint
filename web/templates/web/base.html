@@ -3,32 +3,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+    <!--  CSS  -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
     <!--  Bootstrap  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!--  Font awesome  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <!--  CSS  -->
-    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+
 
   <title>{{title}}</title>
 </head>
 <body>
 <header>
-    <!-- Intro settings -->
-    <style>
-      #intro {
-        /* Margin to fix overlapping fixed navbar */
-        margin-top: 58px;
-      }
-      @media (max-width: 991px) {
-        #intro {
-          /* Margin to fix overlapping fixed navbar */
-          margin-top: 45px;
-        }
-      }
-    </style>
+  
 <div class="container">
     
      <div class="site-mobile-menu site-navbar-target">
@@ -75,17 +64,19 @@
               <a href="/" class="text-black"><span class="text-primary"><img src="/static/images/logo_gray.png" 
               	width="80%" height="80%" alt=""></a>
             </div>
+			  <a class="burger"  href=""><i class="fa fa-bars"></i></a>
 
             <div class="col-12">
+            	<div class="navbar">
+            		
               <nav class="site-navigation text-right ml-auto " role="navigation">
 
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li><a href="/" class="nav-link">Домой</a></li>
-                  <li><a href="#services-section" class="nav-link">Сервисы</a></li>
 
 
                   <li class="has-children">
-                    <a href="#about-section" class="nav-link">О нас<i class="fa fa-angle-down"></i></a>
+                    <a href="#about-section" class="nav-link">О нас <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown">
                       <li><a href="#team-section" class="nav-link">Команда</a></li>
                       <li><a href="#pricing-section" class="nav-link">Мы на карте</a></li>
@@ -93,9 +84,7 @@
                     </ul>
                   </li>
 
-                  <li><a href="#why-us-section" class="nav-link">Почему мы</a></li>
 
-                  <li><a href="#testimonials-section" class="nav-link">Отзывы</a></li>
                   <li><a href="#blog-section" class="nav-link">Блог</a></li>
                   <li><a href="#contact-section" class="nav-link">Связаться с нами</a></li>
                 </ul>
@@ -109,11 +98,13 @@
         </div>
 
       </header>
+
+
+
 {% block content %}
 {% endblock %}
 
 
-    
 
  
 </div>

@@ -24,22 +24,22 @@
 
 		<div class="row">
 			{% for post in posts %}
-			<div class="col-lg-4 col-md-6 mb-4 ">
-				<div class="posts p-3 mb-5">
+			<div class="posts col-lg-4 col-md-12 col-sm-12 mb-4 ">
+				<div class="post p-3 mb-5">
 					{% if post.header_image %}
-					<div class="image mb-3 bg-image hover-overlay">
+					<div class="image header-image mb-3 bg-image hover-overlay">
 						<img src="/media/{{post.header_image}}" class="img-fluid" alt="Preview">				
 						
 					</div>
 					{% endif %}
 					<div class="card-body">
-						<h5 class="card-title">{{post.title}}</h5>
-						<p class="card-text">
+						<h5 class="card-title post-title">{{post.title}}</h5>
+						<p class="card-text description">
 							{{post.description}}
 
 						</p>
-						<p>Published: {{post.published_date}}</p>		
-						<a href="{% url 'detail' pk=post.pk %}" class="btn btn-primary">Читать</a>
+						<p class="post-published-date">Published: {{post.published_date}}</p>		
+						<a href="{% url 'detail' pk=post.pk %}" class="btn btn-primary mt-2">Читать</a>
 					</div>
 				</div>
 			</div>
