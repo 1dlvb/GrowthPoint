@@ -4,12 +4,22 @@
 {% block content %}
 <div class="container">
     <div id="intro" class="p-5 text-center bg-light">
-		<img src="/media/{{post.header_image}}" alt="Preview" class="img-fluid mb-5" >
-		<h1 class="mb-5">{{post.title}}</h1>
-		<p  class="mb-5 ">{{post.text}}</p>
-			{% for image in post.postimages_set.all %} 
-				<img src="{{ MEDIA_URL}} {{ image.image.url }}"  alt="Post image" class="img-fluid mt-5 mb-5" />
+		<div class="post-detail">
+			<img src="/media/{{post.header_image}}" alt="Preview" class="img-fluid mb-5" >
+			<h1 class="mb-5">{{post.title}}</h1>
+			<p  class="mb-5 ">{{post.text}}</p>
+			
+			{% for data in queryset %}
+				{% if data.image %}
+					<img src="{{ data.image.url }}" alt="Post image" class="img-fluid mt-5 mb-5" />
+				{% endif %}	
+		
+				{% if data.text %}
+					<p class="mb-5">{{data.text}}</p>
+				{% endif %}	
 			{% endfor %}
+		</div>
+
 	<div>
 <div>
 

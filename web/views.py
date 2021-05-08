@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.templatetags.static import static
 from django.utils import timezone
-from .models import Post, PostImages
+from .models import Post, PostAdditionalImages\
+    # , PostAdditionalText
 
 # Create your views here.
 
@@ -19,10 +20,18 @@ def index(request):
 
 def detail_view(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    photos = PostImages.objects.filter(post=post)
+    data = PostAdditionalImages.objects.filter(post=post)
+    # text = PostAdditionalText.objects.filter(post=post)
+    images = []
+    text = []
+    for data1 in data:
+        images.append(data1.image)
+        text.append(data1.text)
+
     context = {
         'post': post,
-        'photos': photos,
-
+        'photos': images,
+        'text': text,
+        'queryset': data,
     }
     return render(request, 'web/detail.html', context)

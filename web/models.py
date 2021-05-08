@@ -80,6 +80,12 @@ class Post(models.Model):
         return self.title
 
 
-class PostImages(models.Model):
+class PostAdditionalImages(models.Model):
     post = models.ForeignKey(Post, default=None, on_delete=models.CASCADE)
-    image = LimitedImageField('Image', upload_to='images/', min_dim=(400, 300), max_dim=(3840, 2160))
+    image = LimitedImageField('Image', upload_to='images/', min_dim=(400, 300), max_dim=(3840, 2160), blank=True,
+                              null=True)
+    text = models.TextField(blank=True, null=True)
+
+
+# class PostAdditionalText(models.Model):
+#     post = models.ForeignKey(Post, default=None, on_delete=models.CASCADE)
