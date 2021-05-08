@@ -4,9 +4,8 @@ from django.utils import timezone
 from django.forms import forms
 from django.core.files.images import get_image_dimensions
 
-import os
 from PIL import Image
-
+from tinymce import models as tinymce_models
 # Create your models here.
 
 
@@ -62,7 +61,7 @@ class Post(models.Model):
                                                            'профилей, организованная в рамках проекта '
                                                            '"Современная школа".',
                                    help_text='Description must not exceed 160 characters.')
-    text = models.TextField()
+    text = tinymce_models.HTMLField()
     created_date = models.DateTimeField(default=timezone.now)
     header_image = LimitedImageField('Header Image', default="images/1000x1000.jpg",
                                      upload_to='images/',
@@ -84,7 +83,7 @@ class PostAdditionalImages(models.Model):
     post = models.ForeignKey(Post, default=None, on_delete=models.CASCADE)
     image = LimitedImageField('Image', upload_to='images/', min_dim=(400, 300), max_dim=(3840, 2160), blank=True,
                               null=True)
-    text = models.TextField(blank=True, null=True)
+    text = tinymce_models.HTMLField(blank=True, null=True)
 
 
 # class PostAdditionalText(models.Model):

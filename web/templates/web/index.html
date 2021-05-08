@@ -39,7 +39,7 @@
 
 						</p>
 					</div>
-					<div class="date"><p class="post-published-date">Published: {{post.published_date}}</p></div>		
+					<div class="date"><p class="post-published-date">Опубликовано: {{post.published_date}}</p></div>
 					<a href="{% url 'detail' pk=post.pk %}" class="btn btn-primary mt-1">Читать</a>
 
 				</div>
@@ -47,11 +47,11 @@
 
 			{% endfor %}
 		</div>
-
+      </section>
 </div>
 
 
-        
+
       <!--Section: Content-->
 
       <!-- Pagination -->
@@ -76,7 +76,7 @@
 
  <!--Footer-->
   <footer class="bg-light text-lg-start">
-   
+
     <hr class="m-0" />
 
     <div class="text-center py-4 align-items-center">
@@ -95,7 +95,7 @@
       </a>
     </div>
 
- 	
+
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
@@ -104,6 +104,5 @@
     </div>
     <!-- Copyright -->
   </footer>
-  <!--Footer-->  
+  <!--Footer-->
 {% endblock %}
-

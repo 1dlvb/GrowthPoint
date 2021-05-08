@@ -6,7 +6,9 @@ from django.conf.urls.static import static
 # Register your models here.
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
     path('', include('web.urls')),
+
 ]
 
 if settings.DEBUG:

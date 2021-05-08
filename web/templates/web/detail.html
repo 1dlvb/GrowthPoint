@@ -7,7 +7,7 @@
 		<div class="post-detail">
 			<img src="/media/{{post.header_image}}" alt="Preview" class="img-fluid mb-5" >
 			<h1 class="mb-5">{{post.title}}</h1>
-			<p  class="mb-5 ">{{post.text}}</p>
+			<div class="img-fluid"><p  class="mb-5">{{post.text|safe}}</p></div>
 			
 			{% for data in queryset %}
 				{% if data.image %}
@@ -15,12 +15,11 @@
 				{% endif %}	
 		
 				{% if data.text %}
-					<p class="mb-5">{{data.text}}</p>
+					<p class="mb-5">{{data.text|safe}}</p>
 				{% endif %}	
 			{% endfor %}
 		</div>
-
-	<div>
-<div>
+	</div>
+</div>
 
 {% endblock %}
