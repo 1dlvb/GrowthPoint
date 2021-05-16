@@ -33,3 +33,24 @@ def detail_view(request, pk):
         'queryset': data,
     }
     return render(request, 'web/detail.html', context)
+
+
+def where(request):
+    context = {
+
+    }
+    return render(request, 'web/where.html', context)
+
+
+def contact(request):
+    context = {
+
+    }
+    return render(request, 'web/contact.html', context)
+
+
+def our_team(request):
+    context = {
+
+    }
+    return render(request, 'web/our_team.html', context)

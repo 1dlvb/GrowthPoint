@@ -6,7 +6,7 @@
 <!-- Jumbotron -->
     <div id="intro" class="p-5 text-center bg-light">
       <h1 class="mb-3 h2">Точка роста Игринской СОШ№4</h1>
-      <p class="mb-3">Федеральная сеть центров образования цифрового, естественнонаучного, технического и гуманитарного профилей, организованная в рамках проекта "Современная школа"</p>
+      <p class="mb-3">Федеральная сеть центров образования цифрового и гуманитарного профилей, организованная в рамках проекта "Современная школа"</p>
     </div>
     <!-- Jumbotron -->
   </header>
@@ -14,25 +14,23 @@
 
   <!--Main layout-->
   <main class="my-5">
-    <div class="container">
+    <div id="posts-container" class="container">
       <!--Section: Content-->
       <section class="text-center">
         <h4 class="mb-5"><strong>Последние новости</strong></h4>
-
-        
-
+        <div id="test"></div>
 
 		<div class="row">
 			{% for post in posts %}
-			<div class="posts col-lg-4 col-md-12 col-sm-12 mb-4">
-				<div class="post p-3 mb-1">
+			<div class="posts col-lg-4 cool-mb">
+				<div  class="post p-3 mb-1">
 					{% if post.header_image %}
 					<div class="image header-image mb-3 bg-image hover-overlay">
 						<img src="/media/{{post.header_image}}" class="img-fluid" alt="Preview">				
 						
 					</div>
 					{% endif %}
-					<div class="card-body">
+					<div id="posts" class="card-body">
 						<h5 class="card-title post-title">{{post.title}}</h5>
 						<p class="card-text description">
 							{{post.description}}
@@ -40,8 +38,7 @@
 						</p>
 					</div>
 					<div class="date"><p class="post-published-date">Опубликовано: {{post.published_date}}</p></div>
-					<a href="{% url 'detail' pk=post.pk %}" class="btn btn-primary mt-1">Читать</a>
-
+					<a id="btn-read" href="{% url 'detail' pk=post.pk %}" class="btn btn-primary mt-1">Читать</a>
 				</div>
 			</div>
 
@@ -49,29 +46,10 @@
 		</div>
       </section>
 </div>
+     
 
-
-
-      <!--Section: Content-->
-
-      <!-- Pagination -->
-     <!--  <nav class="my-4" aria-label="...">
-        <ul class="pagination pagination-circle justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav> -->
-    </div>
-  </main>
+</div>
+</main>
   <!--Main layout-->
 
  <!--Footer-->

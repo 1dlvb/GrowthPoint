@@ -11,11 +11,12 @@
     <!--  Font awesome  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+    
+    
 
   <title>{{title}}</title>
 </head>
-<body>
+<body  onload="CheckingWindowSize();" onresize="CheckingWindowSize();">
 <header>
 
 <div class="container">
@@ -34,16 +35,16 @@
         <div class="container">
           <div class="row">
             <div class="col-12 mt-2">
-              <a href="mailto:School4igra2007@yandex.ru​" target="_blank" rel="noopener noreferrer" class=""><span class="mr-2  icon-envelope-open-o"></span> <span class="d-none d-md-inline-block">School4igra2007@yandex.ru​</span></a>
+              <a href="" rel="noopener noreferrer" class="schoolEmail"><span class="mr-2  icon-envelope-open-o"></span> <span class="d-none d-md-inline-block">School4igra2007@yandex.ru​</span></a>
               <span class="mx-md-2 d-inline-block"></span>
-              <a href="tel:+7 (34134) 4-22-92" class=""><span class="mr-2  icon-phone"></span> <span class="d-none d-md-inline-block">+7 (34134) 4-22-92</span></a>
+              <a href="tel:+7 (34134) 4-22-92" class="shcoolPhNumber"><span class="mr-2 icon-phone"></span> <span class="d-none d-md-inline-block">+7 (34134) 4-22-92</span></a>
 
 
               <div class="float-right  mt-n1">
 
-                <a href="https://vk.com/public186332645" target="_blank" class=""><span class="mr-2"></span> <span class="d-none d-md-inline-block"><i class="fa fa-vk"></i></span></a>
+                <a href="https://vk.com/public186332645" target="_blank" class=""><span class="mr-2"></span> <span class="d-none d-md-inline-block"><i class="vk fa fa-vk"></i></span></a>
                 <span class="mx-md-2 d-inline-block"></span>
-                <a href="https://www.youtube.com/channel/UCTQUw_vdYrIMm7lDUwSMF5w" target="_blank" class=""><span class="mr-2"></span> <span class="d-none d-md-inline-block"><i class="fa fa-youtube-play"></i></span></a>
+                <a href="https://www.youtube.com/channel/UCTQUw_vdYrIMm7lDUwSMF5w" target="_blank" class=""><span class="mr-2"></span> <span class="d-none d-md-inline-block"><i class="youtube fa fa-youtube-play"></i></span></a>
 
               </div>
 
@@ -53,19 +54,29 @@
 
         </div>
       </div>
-
       <header class="site-navbar mt-4 js-sticky-header site-navbar-target" role="banner">
 
         <div class="container">
           <div class="row align-items-center position-relative">
-
+        
+        <div id="burger-menu" class="burger-menu">
+            <div id="burger-content" class="burger-content">
+              <ul class=" menu clearfix">
+                <li><a class="text-dark" href="/">Домой</a></li>
+                <li><a class="text-dark" href="{% url 'team' %}">Команда</a></li>
+                <li><a class="text-dark" href="{% url 'where' %}">Мы на карте</a></li>
+                <li><a class="text-dark" href="/">Блог</a></li>
+                <li><a class="text-dark" href="{% url 'contact' %}">Связаться с нами</a></li>
+              </ul>
+            </div>
+        </div>
+          
 
             <div class="site-logo mt-n3">
               <a href="/" class="text-black"><span class="text-primary"><img src="/static/images/logo_gray.png" 
               	width="80%" height="80%" alt=""></span></a>
             </div>
-			  <a class="burger"  href=""><i class="fa fa-bars"></i></a>
-
+      
             <div class="col-12">
             	<div class="navbar">
             		
@@ -78,15 +89,14 @@
                   <li class="has-children">
                     <a href="#about-section" class="nav-link">О нас <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown">
-                      <li><a href="#team-section" class="nav-link">Команда</a></li>
-                      <li><a href="#pricing-section" class="nav-link">Мы на карте</a></li>
-                      <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+                      <li><a href="{% url 'team' %}" class="nav-link">Команда</a></li>
+                      <li><a href="{% url 'where' %}" class="nav-link">Мы на карте</a></li>
                     </ul>
                   </li>
 
 
-                  <li><a href="#blog-section" class="nav-link">Блог</a></li>
-                  <li><a href="#contact-section" class="nav-link">Связаться с нами</a></li>
+                  <li><a href="/" class="nav-link">Блог</a></li>
+                  <li><a href="{% url 'contact' %}" class="nav-link">Связаться с нами</a></li>
                 </ul>
               </nav>
 
@@ -102,7 +112,6 @@
 
 
 
-
 {% block content %}
 {% endblock %}
 
@@ -113,4 +122,43 @@
 </header>
 
 </body>
+<!-- JS -->
+<script type="text/javascript" src="{% static 'js/script.js'%}"></script>
+
+<script>
+    function CheckingWindowSize(){
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var arrangement = 'landscape';
+        if ((document.getElementById("posts-container") && (document.getElementById("btn-read")))){
+            if (width <= 785){
+                document.getElementById("posts-container").classList.remove('container');
+                document.getElementById("posts-container").classList.add('container-fluid');
+                document.getElementById("btn-read").classList.add('btn-read');
+
+            }
+            else if (width > 785){
+                document.getElementById("posts-container").classList.remove('container-fluid');
+                document.getElementById("btn-read").classList.remove('btn-read');
+                document.getElementById("posts-container").classList.add('container');
+
+            }
+                
+            if(width > height){
+                arrangement = 'landscape';
+            }
+            else{
+                arrangement = 'portrait';
+            }
+        
+        }
+       
+    }
+
+    function BurgerMenu(){
+        document.getElementById("burger-content").classList.toggle("show");
+    }
+</script>
+
+
 </html>

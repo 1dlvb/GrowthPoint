@@ -39,46 +39,119 @@ a {
   transition: .3s all ease; }
   a, a:hover {
     text-decoration: none !important; }
+.cool-mb{
+  margin-bottom: 2.5rem !important;
+}
+
+i:hover{
+  transition: 0.3s;
+}
+.youtube:hover{
+  color: #FF0000;
+}
+.vk:hover{
+  color: #2787F5;
+}
+.schoolEmail:hover{
+  color: #000;
+}
+.shcoolPhNumber:hover{
+  color: #000;
+}
+
 .date p{
   color: #b3b3b3;
 
 }
+#burger-menu{
+  /*display: ;*/
+  position: absolute;
+  right: 0;
+}
+#burger-menu a{
+  text-decoration: none;
+}
+.burger-content{
+  display: none;
+}
 
-.burger, .burger:hover{
+.burger{
   display: none;
   font-size: 35px;
   margin-left: auto;
   margin-right: 10px;
-  margin-top: -15px;
-
-  text-align: right;
+  margin-top: -25px;
+  text-decoration: none;
+  text-align: left;
   color:#000;
-
 }
+.burger:hover{
+  color: #EC1B23;
+  transition: 0.3s;
+}
+
 #intro p{
   font-size: 18px;
 }
 
 #intro {
-/* Margin to fix overlapping fixed navbar */
   margin-top: 58px;
 }
+.burger-content ul{
+  list-style:none;
+  color: #000;
+}
+
+/*MEDIA*/
+@media (max-width: 1200px) {
+  .date{
+    margin-top: 30px;
+  }
+}
+
 @media (max-width: 991px) {
   #intro {
     /* Margin to fix overlapping fixed navbar */
     margin-top: 45px;
   }
-  .burger{
+  
+  .burger-content{
+    display: inline-block;
+  }
+  .show{
     display: block;
   }
-
   .description{
     font-size: 20px;
   }
   #intro p{
     font-size: 28px;
   }
+  .posts{
+    /*background-color: red;*/
+
+  }
+  .cool-mb{
+  margin-bottom: 25rem !important;
+
+  }
 }
+
+@media screen and (orientation: portrait) {
+  .btn-read{
+    transform: scale(1.0);
+  }
+  body{
+    background-color: red;
+  }
+}
+/*MEDIA*/
+
+.btn-read{
+  transform: scale(1.0);
+}
+
+
 
 .post{
   /*background-color: red;*/
@@ -96,6 +169,7 @@ a {
   font-size: 20px;
 }
 
+/*STANDART STYLES*/
 .hero {
   height: 100vh;
   width: 100%;

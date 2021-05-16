@@ -85,6 +85,5 @@ class PostAdditionalImages(models.Model):
                               null=True)
     text = tinymce_models.HTMLField(blank=True, null=True)
 
-
-# class PostAdditionalText(models.Model):
-#     post = models.ForeignKey(Post, default=None, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name_plural = "additional part"
