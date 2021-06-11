@@ -135,6 +135,7 @@ i:hover{
   margin-bottom: 25rem !important;
 
   }
+ 
 }
 
 @media screen and (orientation: portrait) {
@@ -169,6 +170,35 @@ i:hover{
   font-size: 20px;
 }
 
+#map{
+  width: 800px;
+  height: 600px;
+  border: solid 1px #000;
+}
+.contact{
+  height: 600px;
+  text-align: center;
+}
+.official h1{
+  margin-bottom: 25px;
+}
+.official a{
+  font-size: 25px;
+  color: #000;
+}
+.official a:hover{
+  color: #000;
+}
+
+.social{
+ margin-top: 120px;
+}
+
+.social i, a{
+
+  color: #fff;
+
+}
 /*STANDART STYLES*/
 .hero {
   height: 100vh;
